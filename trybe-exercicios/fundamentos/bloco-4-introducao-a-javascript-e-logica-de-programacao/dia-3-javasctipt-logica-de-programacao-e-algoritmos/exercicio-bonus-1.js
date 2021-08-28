@@ -1,6 +1,6 @@
 var ast = "*"
 var cont_ast = 1
-var n = 11
+var n = 26
 var nSec = n
 var quantOdd = 0
 var cont_blank = n
@@ -15,8 +15,8 @@ for (let i = 0; i < n; i += 1) {
 } 
 // ------------------------------------------------------
 
-// Bloco onde os números ímpares são definidose impressos
-for (let index = 1; index < quantOdd; index += 1) {
+// Bloco onde os números ímpares são definidos e impressos
+for (let index = 0; index < quantOdd; index += 1) {
   if (cont_ast == 1) {
     cont_blank = Math.trunc(n / 2)
     console.log(blank.repeat(cont_blank) + ast)
@@ -32,5 +32,12 @@ for (let index = 1; index < quantOdd; index += 1) {
       cont_blank -= 1
     }
   }
-  console.log(blank.repeat(cont_blank) + ast.repeat(cont_ast))
+  if (index < quantOdd - 2) {
+    console.log(blank.repeat(cont_blank) + "*" + blank.repeat(cont_ast - 2) + "*")
+  }
+  else if (index < quantOdd - 1) {
+    console.log(blank.repeat(cont_blank) + "*" + ast.repeat(cont_ast - 1))
+  }
 }
+
+// GAMBIARRA WINS!
